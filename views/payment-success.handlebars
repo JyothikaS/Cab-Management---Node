@@ -1,0 +1,38 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    swal({
+        title: "Payment Success!",
+        text: "Explore more..!",
+        icon: "success",
+        button: "OK",
+    });
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/home"> <button type="button" class="btn btn-secondary">Back to Home</button></a>
+        </div>
+        <div class="col">
+           <a href="/book/paymentInvoice/{{data.dataValues.id}}" ><button type="button" class="btn btn-info">Print Receipt</button></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: url('https://img.freepik.com/free-vector/taxi-driver-stopping-by-married-couple-husband-wife-standing-yellow-cab-flat-vector-illustration-taxi-service-transportation-concept-banner-website-design-landing-web-page_74855-20934.jpg?w=2000');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.858);
+        margin-top: 100px;
+        height: 260px;
+        width: 400px;
+        padding-left: 50px;
+        padding-top: 110px;
+
+    }
+</style>

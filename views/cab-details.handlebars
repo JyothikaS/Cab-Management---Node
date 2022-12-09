@@ -1,0 +1,33 @@
+
+<style>
+    body{
+        background: url('https://cdn.pixabay.com/photo/2018/09/22/18/42/taxi-3695843_1280.jpg');
+         padding-bottom: 600px;;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
+min-height: 100%;
+  overflow: hidden;
+  margin-top: -71px;
+
+    }
+    .card {
+        top: 100px;
+        margin-left: 350px;
+        height: 290px;
+            margin-right: 403px;
+        
+    }
+
+</style>
+
+<div class="card">
+    <h5 class="card-header">Details</h5>
+    <div class="card-body" style="padding-left:50px;">
+        <h5 class="card-title">Cab Name: {{data.dataValues.cname}}</h5>
+        <p class="card-text">Cab Type: {{data.dataValues.cmodel}}</p>
+        <p class="card-text">Cab License Plate: {{data.dataValues.license_plate}}</p>
+        <p class="card-text">Cab Capacity: {{data.dataValues.capacity}}</p>
+        <a href="/book/create/{{data.dataValues.cid}}" class="btn btn-primary" style="margin-left:150px;">BOOK NOW</a>
+    </div>
+</div>

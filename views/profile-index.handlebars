@@ -1,0 +1,58 @@
+<style>
+    .table {
+        width: 550px;
+        margin-left: 390px;
+        /*border: 2px solid rgba(0, 0, 0, 0.551); */
+        margin-top: 40px;
+
+    }
+    .btn{
+        margin-left: 470px;
+    }
+</style>
+
+<br>
+<h1 class="text-center">Profile</h1>
+<div class="container">
+    <table class="table table-borderless">
+        {{#each data}}
+        <tr>
+            <th>First Name</th>
+            <td>{{this.dataValues.firstName}}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{this.dataValues.lastName}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{this.dataValues.email}}</td>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <td>{{this.dataValues.phone}}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{this.dataValues.address}}</td>
+        </tr>
+        <tr>
+            <th>DOB</th>
+            <td>{{this.dataValues.dob}}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{this.dataValues.gender}}</td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>{{this.dataValues.password}}</td>
+        </tr>
+       
+
+        
+    </table>
+
+    <a href="profile/update/{{this.dataValues.id}}" class="btn btn-primary">+ Update details</a>
+{{/each}}
+</div>

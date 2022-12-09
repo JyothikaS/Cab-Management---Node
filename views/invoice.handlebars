@@ -1,0 +1,78 @@
+<style>
+    body{
+        background-color: rgba(240, 248, 255, 0.486);
+    }
+    .table {
+        width: 550px;
+        margin-left: 320px;
+        /*border: 2px solid rgba(0, 0, 0, 0.551); */
+        margin-top: 40px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size:18px;
+
+    }
+    .btn {
+        margin-left: 500px;
+    }
+    .table{
+        border: 2px solid rgba(0, 0, 0, 0.039);
+        
+    }
+</style>
+
+<br>
+<h1 class="text-center">Booked Details</h1>
+<div class="container">
+   
+    <table class="table table-borderless">
+        <tbody>
+        <tr>
+            <th>Passenger Name</th>
+            <td>{{invoice.dataValues.psngrname}}</td>
+        </tr>
+        <tr>
+            <th>Passenger Contact</th>
+            <td>{{invoice.dataValues.psngrcontact}}</td>
+        </tr>
+        <tr>
+            <th>Cab License Number</th>
+            <td>{{invoice.dataValues.cabnumber}}</td>
+        </tr>
+        <tr>
+            <th>Number of Passengers</th>
+            <td>{{invoice.dataValues.psngrno}}</td>
+        </tr>
+        <tr>
+            <th>Pick-Up location</th>
+            <td>{{invoice.dataValues.pickup}}</td>
+        </tr>
+        <tr>
+            <th>Drop-Off location</th>
+            <td>{{invoice.dataValues.dropoff}}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{invoice.dataValues.date}}</td>
+        </tr>
+        <tr>
+            <th>Time</th>
+            <td>{{invoice.dataValues.time}}</td>
+        </tr>
+        <tr>
+            <th>Rate</th>
+            <th>₹{{invoice.dataValues.rate}}</th>
+        </tr>
+
+</tbody>
+    </table>
+
+    <button id="printpdf" onclick="printpdf()" class="btn btn-primary">Print Now</button>
+  
+</div>
+<script>
+    const btn = document.getElementById('printpdf')
+    function printpdf() {
+        btn.style.display = 'none'
+        return window.print()
+    }
+</script>

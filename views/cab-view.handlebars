@@ -1,0 +1,46 @@
+<style>
+    .row {
+        margin-top: 60px;
+    }
+
+    button {
+        margin-left: 130px;
+
+        height: 50px;
+
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row">
+        {{#each data}}
+        <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+            
+            <div class="card">
+                {{!-- <div class="d-flex justify-content-between p-3">
+                    <p class="lead mb-0">Today's Combo Offer</p>
+                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
+                        style="width: 35px; height: 35px;">
+                        <p class="text-white mb-0 small">x4</p>
+                    </div>
+                </div> --}}
+                <img src="https://webseminovos.blob.core.windows.net/noticia-original/O_9df228d8-e6b8-4ebb-ad88-89bff0da7b1f.jpg"
+                    class="card-img-top" alt="Laptop" />
+                <div class="card-body">
+                    <div class="d-flex justify-content-between" style="text-decoration:none;">Type:
+                        <p class="small" style="text-decoration:none;"><a href="#!" class="text-muted"
+                                style="text-decoration:none;">:{{this.dataValues.cmodel}}</a></p>
+                        {{!-- <p class="small text-danger"><s></s></p>--}}
+                        <p class="text-muted mb-0">Capacity: <span class="fw-bold">{{this.dataValues.capacity}}</span>
+                        </p>
+                    </div>
+                      <a href="/cab/details/{{this.dataValues.cid}}">
+                    <button type="button" class="btn btn-info">Info</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+         {{/each}}
+    </div>
+</div>
+

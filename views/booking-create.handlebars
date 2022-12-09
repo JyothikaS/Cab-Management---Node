@@ -1,0 +1,172 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+body{
+        background-color: rgba(240, 248, 255, 0.486);
+    }
+
+    /* Style the header */
+
+
+    /* Create two columns/boxes that floats next to each other */
+    .box1 {
+        float: left;
+        width: 60%;
+        margin-bottom: 0;
+        background: rgba(188, 202, 208, 0.465);
+        padding: 20px;
+        margin-top: -66px;
+    }
+
+    .box2 {
+        float: left;
+        padding: 20px;
+        width: 40%;
+        /*background-image: url('https://i.pinimg.com/originals/57/07/26/570726f9398849aa200fbcba9466f9f2.gif'); */
+        /* background-image: url('https://cdn.dribbble.com/users/1453459/screenshots/3990010/media/43e32e7444bac243f1c13c0c06cc132a.gif');*/
+         background-image: url('https://cdn.dribbble.com/users/1055192/screenshots/12841366/media/6f7d13c3737aebce2680d4e421e3b33f.gif');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        height: 500px;
+    }
+
+    /* Clear floats after the columns */
+    section::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    section {
+        padding-top: 72px;
+        height: 550px;
+    }
+
+
+    @media (max-width: 600px) {
+
+        nav,
+        article {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <section>
+        <div class="box1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-6 offset-sm-3" style="width:600px; margin-left:100px; padding-right:120px;">
+                        <h1 class="text-center">Book Your Cab</h1>
+                        <form method="post">
+                            <h2>Passenger Details</h2>
+                            <div>
+                                <label for="psngrname">Name</label>
+                                <input type="text" name="psngrname" id="psngrname"
+                                    value="{{user.dataValues.firstName}} {{user.dataValues.lastName}}"
+                                    class="form-control">
+                            </div>
+                            <div>
+                                <label for="psngrcontact">Contact</label>
+                                <input type="number" name="psngrcontact" id="psngrcontact"  class="form-control"
+                                    value="{{user.dataValues.phone}}">
+                            </div>
+
+
+
+
+                            <div>
+                                <label for="psngrno">Number of Passengers</label>
+                                <input type="number" name="psngrno" id="psngrno" max="6" class="form-control">
+                            </div>
+
+                            {{!-- --}}
+                            <div class="col">
+                                <label for="cabnumber">CAB</label>
+                                <input type="text" name="cabnumber" id="cabnumber" readonly
+                                    value="{{cab.dataValues.license_plate}}" class="form-control"
+                                    style="border-color:rgb(44, 156, 204) ;width:29%;">
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="start">Source</label>
+                                        <select class="form-select" name="start" aria-label="Default select example">
+                                            <option selected>Choose Pick-up Location</option>
+                                            {{#each data}}
+
+                                            <option value="{{this.dataValues.source}}">{{this.dataValues.source}}</option>
+
+                                            {{/each}}
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="end">Destination</label>
+                                        <select class="form-select" name="end" aria-label="Default select example">
+                                            <option selected>Choose Drop-off Location</option>
+                                            {{#each data}}
+
+                                            <option value="{{this.dataValues.destination}}">{{this.dataValues.destination}}
+                                            </option>
+
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="date">Date</label>
+                                        <input type="date" class="form-select" name="date"
+                                            aria-label="Default select example" />
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="time">Time</label>
+                                        <input type="time" class="form-select" name="time"
+                                            aria-label="Default select example" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            {{!-- --}}
+
+
+
+                            <div class="d-grid mt-4">
+                             
+                                <a href="/book/view/{{this.dataValues.id}}">
+                                <button type="submit" class="btn btn-primary">Save</button></a>
+                                {{#if message}}
+                                <p class="text-danger">{{message}}</p>
+                                {{/if}}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="box2">
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>

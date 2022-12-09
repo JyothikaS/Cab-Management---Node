@@ -1,0 +1,167 @@
+<style>
+    .footer {
+        position: sticky;
+        top: 410px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: none;
+        color: white;
+        text-align: center;
+    }
+    .container{
+        background-color: white;
+        padding-top: 100px;
+        margin-top: -70px;
+    }
+        .footer {
+        position: sticky;
+        top: 410px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: none;
+        color: white;
+        text-align: center;
+    }
+
+    .container {
+        background-color: white;
+        padding-top: 50px;
+        margin-top: 0;
+    }
+
+    .form-control {
+        width: 180px;
+        
+    }
+   
+    /*nav*/
+      body {
+        margin: 0;
+    }
+
+    header {
+        height: 70px;
+        box-shadow: 0 0 5px black;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        backdrop-filter: blur(10px);
+        margin-top: -70px;
+    }
+
+
+    .nav {
+        border: none;
+        float: right;
+    }
+
+    main {
+        min-height: 150vh;
+        /*background-image:url('https://img.freepik.com/free-vector/taxi-app-concept_23-2148496605.jpg?w=996&t=st=1669099667~exp=1669100267~hmac=5c6fb50ea1e2028098044d37ea1dd7ed460a7ae39b940e6b5c2607129b514e0e') ;*/
+        background-image: url('https://img.freepik.com/premium-vector/yellow-taxi-car-man-shirt-tie-taxi-driver-is-carrying-man-passenger-foreground-vector-flat-illustration_531064-1842.jpg?w=900');
+        background-attachment: fixed;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+
+    .textcontent {
+        width: 700px;
+        height: 500px;
+        border: 10px;
+        text-align: center;
+        float: right;
+        font-family: cursive;
+        padding-top: 91px;
+        padding-left: 200px;
+    }
+   input[type=button] {
+        background-color: #5e78b5;
+        height: 50px;
+        width: 150px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: -163px;
+        margin-left: 500px;
+        margin-right: 176px;
+        float: right;
+    }
+
+  
+    .nav-item {
+        background-color: #6c9ca4;
+        margin-top: 15px;
+        border-radius: 6px;
+        margin-left: 10px;
+    }
+
+</style>
+<br><br><br>
+
+<header style="background-color: #cad7ddd9;">
+    <!-- Nav tabs -->
+    
+    <a class="navbar-brand" style="margin-left:20px; padding-top:20%; font-size:35px; font-weight:bolder; font-family:cursive; color:#cf7500;" href="/home" >BookMyCab</a>
+    <ul class="nav nav-tabs" id="navId">
+       
+          <li class="nav-item">
+            <a style="color:black" class="nav-link" data-bs-toggle="tab" href="/admin/user">Users</a>
+        </li>
+        <li class="nav-item">
+            <a style="color:black"  class="nav-link" data-bs-toggle="tab" href="/admin/cab">Cabs</a>
+        </li>
+        <li class="nav-item">
+            <a style="color:black"  class="nav-link" data-bs-toggle="tab" href="/admin/bookview">Bookings</a>
+        </li>
+    </ul>
+</header>
+<br><h1 class="text-center">Cab Details</h1>
+<div class="container">
+    <a href="/cab/create" class="btn btn-primary">+ Add Cab</a>
+    <table class="table table-striped mt-4">
+        <tr>
+            <th>Id</th>
+            <th>Driver Name</th>
+            <th>Driver Email</th>
+            <th>Driver Contact</th>
+            <th>Drivers License</th>
+            <th>Cab Name</th>
+            <th>Cab Model</th>
+            <th>Cab Capacity</th>
+            <th>Cab License Plate</th>
+            <th>Cab Manufactured year</th>
+            <th>Password</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.cid}}</td>
+            <td>{{this.dataValues.dname}}</td>
+            <td>{{this.dataValues.demail}}</td>
+            <td>{{this.dataValues.dcontact}}</td>
+            <td>{{this.dataValues.dlicense}}</td>
+            <td>{{this.dataValues.cname}}</td>
+            <td>{{this.dataValues.cmodel}}</td>
+            <td>{{this.dataValues.capacity}}</td>
+            <td>{{this.dataValues.license_plate}}</td>
+            <td>{{this.dataValues.myear}}</td>
+            <td>{{this.dataValues.password}}</td>
+            <td>{{this.dataValues.status}}</td>
+            <td>
+                <a href="/cab/update/{{this.dataValues.cid}}">Edit</a> |
+                <a href="/cab/delete/{{this.dataValues.cid}}" class="text-danger"
+                    onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+<!--footer-->
+<div class="footer">
+    <img src="https://quick-cabs.com/images/footer.png" class="img-fluid" alt="">
+</div>
+<!-- Footer -->
